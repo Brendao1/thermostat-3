@@ -29,4 +29,6 @@ $(document).ready(function() {
       $('#power-saving-status').text('on');
     })
 
+    $('#energy-usage').text(thermostat.energyUsage());
+    
 })
