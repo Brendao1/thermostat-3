@@ -1,13 +1,19 @@
 $(document).ready(function() {
 
+  function updateTemperature() {
+    $('#temperature').text(thermostat.temp);
+    $('#temperature').attr('class', thermostat.energyUsage());
+  };
+
+
     var thermostat = new Thermostat()
 
     $('#temperature').text(thermostat.temp);
 
     $('#temperature-up').on('click', function(){
       thermostat.up(1);
-      updateTemperature();
-      // $('#temperature').text(thermostat.temp);
+      // updateTemperature();
+      $('#temperature').text(thermostat.temp);
     });
 
     $('#temperature-down').on('click', function(){
@@ -33,11 +39,6 @@ $(document).ready(function() {
     })
 
     $('#energy-usage').text(thermostat.energyUsage());
-
-
-function updateTemperature() {
-  $('#temperature').text(thermostat.temp);
-};
 
 
 })
